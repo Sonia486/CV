@@ -1,0 +1,367 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sonia Shehezadi - Professional CV</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        /* --- Modern Minimalist Design System --- */
+        :root {
+            --primary-color: #0f172a; /* Slate 900 */
+            --accent-color: #0d9488;  /* Teal 600 */
+            --text-dark: #334155;     /* Slate 700 */
+            --text-light: #64748b;    /* Slate 500 */
+            --bg-light: #f8fafc;      /* Slate 50 */
+            --white: #ffffff;
+            --border-color: #e2e8f0;  /* Slate 200 */
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        body {
+            background-color: var(--bg-light);
+            color: var(--text-dark);
+            line-height: 1.6;
+            padding: 40px 20px;
+        }
+
+        /* --- CV Container Layout --- */
+        .cv-container {
+            max-width: 950px;
+            margin: 0 auto;
+            background: var(--white);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.04);
+            border-radius: 16px;
+            overflow: hidden;
+            display: grid;
+            grid-template-columns: 1fr 2fr;
+        }
+
+        /* --- Left Sidebar (Contact & Tech Skills) --- */
+        .sidebar {
+            background-color: var(--primary-color);
+            color: var(--white);
+            padding: 45px 30px;
+        }
+
+        .profile-header {
+            margin-bottom: 35px;
+        }
+
+        .profile-title {
+            font-size: 26px;
+            font-weight: 700;
+            letter-spacing: 0.5px;
+            color: var(--white);
+            line-height: 1.2;
+        }
+
+        .profile-subtitle {
+            font-size: 13px;
+            color: #2dd4bf; /* Light Teal */
+            margin-top: 8px;
+            font-weight: 500;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+        }
+
+        .sidebar-section {
+            margin-bottom: 35px;
+        }
+
+        .sidebar-heading {
+            font-size: 14px;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+            border-bottom: 2px solid var(--accent-color);
+            padding-bottom: 6px;
+            margin-bottom: 18px;
+            color: var(--white);
+            font-weight: 600;
+        }
+
+        .contact-list {
+            list-style: none;
+        }
+
+        .contact-list li {
+            margin-bottom: 14px;
+            font-size: 14px;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            color: #cbd5e1;
+            word-break: break-word;
+        }
+
+        .contact-list i {
+            color: #2dd4bf;
+            width: 18px;
+            font-size: 15px;
+        }
+
+        .skills-list {
+            list-style: none;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+        }
+
+        .skills-list li {
+            font-size: 13px;
+            background: rgba(255, 255, 255, 0.06);
+            padding: 6px 12px;
+            border-radius: 6px;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            color: #e2e8f0;
+        }
+
+        /* --- Right Main Content --- */
+        .main-content {
+            padding: 45px;
+            background: var(--white);
+        }
+
+        .main-section {
+            margin-bottom: 35px;
+        }
+
+        .section-title {
+            font-size: 18px;
+            color: var(--primary-color);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 20px;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            font-weight: 700;
+        }
+
+        .section-title i {
+            color: var(--accent-color);
+            font-size: 18px;
+        }
+
+        .section-title::after {
+            content: '';
+            flex: 1;
+            height: 1px;
+            background: var(--border-color);
+        }
+
+        .summary-text {
+            color: var(--text-dark);
+            font-size: 14.5px;
+            text-align: justify;
+        }
+
+        /* --- Elegant Timeline Display --- */
+        .timeline-item {
+            position: relative;
+            padding-left: 25px;
+            border-left: 2px solid var(--border-color);
+            margin-bottom: 22px;
+        }
+
+        .timeline-item:last-child {
+            margin-bottom: 0;
+            padding-bottom: 5px;
+        }
+
+        .timeline-item::before {
+            content: '';
+            position: absolute;
+            left: -6px;
+            top: 6px;
+            width: 10px;
+            height: 10px;
+            border-radius: 50%;
+            background-color: var(--accent-color);
+            box-shadow: 0 0 0 3px var(--white);
+        }
+
+        .timeline-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: baseline;
+            margin-bottom: 4px;
+        }
+
+        .degree-title {
+            font-size: 15.5px;
+            font-weight: 600;
+            color: var(--primary-color);
+        }
+
+        .duration {
+            font-size: 12.5px;
+            color: var(--text-light);
+            font-weight: 500;
+            background: var(--bg-light);
+            padding: 2px 10px;
+            border-radius: 20px;
+            border: 1px solid var(--border-color);
+        }
+
+        .institution-name {
+            font-size: 14px;
+            color: var(--accent-color);
+            font-weight: 500;
+            margin-bottom: 6px;
+        }
+
+        .timeline-desc {
+            font-size: 13.5px;
+            color: var(--text-dark);
+        }
+
+        .highlight-badge {
+            display: inline-block;
+            background-color: #f0fdf4;
+            color: #166534;
+            padding: 2px 8px;
+            border-radius: 4px;
+            font-size: 12px;
+            font-weight: 600;
+            margin-top: 5px;
+            border: 1px solid #bbf7d0;
+        }
+
+        /* --- Responsive Design for Mobile --- */
+        @media (max-width: 768px) {
+            .cv-container {
+                grid-template-columns: 1fr;
+            }
+            body {
+                padding: 10px;
+            }
+            .main-content {
+                padding: 30px 20px;
+            }
+            .timeline-header {
+                flex-direction: column;
+                gap: 5px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="cv-container">
+        
+        <aside class="sidebar">
+            <div class="profile-header">
+                <h1 class="profile-title">Sonia Shehezadi</h1>
+                <p class="profile-subtitle">Computer Science Student</p>
+            </div>
+
+            <div class="sidebar-section">
+                <h2 class="sidebar-heading">Contact</h2>
+                <ul class="contact-list">
+                    <li><i class="fa-solid fa-envelope"></i> soniash486@gmail.com</li>
+                    <li><i class="fa-solid fa-location-dot"></i> Gujrat, Punjab, Pakistan</li>
+                    <li><i class="fa-solid fa-user-clock"></i> 19 Years Old</li>
+                </ul>
+            </div>
+
+            <div class="sidebar-section">
+                <h2 class="sidebar-heading">Technical Skills</h2>
+                <ul class="skills-list">
+                    <li>React.js</li>
+                    <li>Vite</li>
+                    <li>HTML5 & CSS3</li>
+                    <li>JavaScript (ES6+)</li>
+                    <li>Firebase</li>
+                    <li>C++ / OOP</li>
+                    <li>DBMS</li>
+                    <li>Freelancing</li>
+                </ul>
+            </div>
+
+            <div class="sidebar-section">
+                <h2 class="sidebar-heading">Languages</h2>
+                <ul class="contact-list">
+                    <li><i class="fa-solid fa-circle-check"></i> Urdu (Native)</li>
+                    <li><i class="fa-solid fa-circle-check"></i> English (Professional)</li>
+                </ul>
+            </div>
+        </aside>
+
+        <main class="main-content">
+            
+            <section class="main-section">
+                <h2 class="section-title"><i class="fa-solid fa-user-graduate"></i> Professional Summary</h2>
+                <p class="summary-text">
+                    An ambitious and dedicated 19-year-old Computer Science student currently maintaining an excellent academic record. Possesses a solid foundation in software development, particularly specializing in modern frontend technologies like React.js, combined with certified freelancing expertise. Enthusiastic about engineering responsive user experiences and delivering clean, optimized web applications.
+                </p>
+            </section>
+
+            <section class="main-section">
+                <h2 class="section-title"><i class="fa-solid fa-graduation-cap"></i> Education</h2>
+                
+                <div class="timeline-item">
+                    <div class="timeline-header">
+                        <h3 class="degree-title">BS Computer Science (BSCS)</h3>
+                        <span class="duration">Current (5th Semester)</span>
+                    </div>
+                    <div class="institution-name">Zamindar College (Affiliated with Sargodha University)</div>
+                    <p class="timeline-desc">Acquiring advanced knowledge in software systems, database management, object-oriented methodologies, and interactive interface engineering.</p>
+                    <div class="highlight-badge">Latest GPA: 3.74 / 4.00</div>
+                </div>
+
+                <div class="timeline-item">
+                    <div class="timeline-header">
+                        <h3 class="degree-title">Intermediate in Computer Science (ICS)</h3>
+                        <span class="duration">Completed</span>
+                    </div>
+                    <div class="institution-name">Marghzar College (Campus of UOG)</div>
+                    <p class="timeline-desc">Obtained foundational knowledge in computer components, programming basics, and mathematics.</p>
+                    <div class="highlight-badge">Marks: 675 / 1100 (Grade B+)</div>
+                </div>
+
+                <div class="timeline-item">
+                    <div class="timeline-header">
+                        <h3 class="degree-title">Matriculation (Science)</h3>
+                        <span class="duration">Completed</span>
+                    </div>
+                    <div class="institution-name">Government Gareeb Pura School</div>
+                    <div class="highlight-badge">Marks: 965 / 1100 (Grade A+)</div>
+                </div>
+            </section>
+
+            <section class="main-section">
+                <h2 class="section-title"><i class="fa-solid fa-award"></i> Certifications</h2>
+                
+                <div class="timeline-item">
+                    <div class="timeline-header">
+                        <h3 class="degree-title">Certificate in Freelancing</h3>
+                        <span class="duration">Certified</span>
+                    </div>
+                    <div class="institution-name">Fauji Foundation</div>
+                    <p class="timeline-desc">Learned market dynamics, client communication, proposal writing, and project management strategies across top freelancing platforms.</p>
+                </div>
+            </section>
+
+            <section class="main-section">
+                <h2 class="section-title"><i class="fa-solid fa-laptop-code"></i> Projects</h2>
+                <div class="timeline-item">
+                    <div class="timeline-header">
+                        <h3 class="degree-title">Web & Software Architectures</h3>
+                        <span class="duration">2026</span>
+                    </div>
+                    <p class="timeline-desc">Developed interactive, state-driven front-end designs using React.js and configured real-time data persistence layers to fulfill dynamic semester milestones.</p>
+                </div>
+            </section>
+
+        </main>
+    </div>
+
+</body>
+</html>
